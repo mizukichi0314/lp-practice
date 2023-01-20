@@ -10,7 +10,6 @@ a {
 }
 
 img {
-  width: 100%;
   vertical-align: bottom;
 }
 
@@ -26,6 +25,7 @@ img {
 .flex {
   display: flex;
   justify-content: space-between;
+  align-items: flex-start;
 }
 
 .section-title {
@@ -43,12 +43,15 @@ header {
   color: #777;
 }
 
+.hamburger {
+  display: none;
+}
+
 .btn {
   color: #fff;
   font-size: 12px;
   background-color: #6ba7eb;
   padding: 12px 14px;
-  display: block;
 }
 
 .btn:hover {
@@ -86,14 +89,17 @@ header {
   padding-top: 50px;
 }
 
+.img-box {
+  width: 40%;
+}
+
 .work img {
   width: 250px;
-  flex-basis: 25%;
 }
 
 .content {
   padding-top: 20px;
-  flex-basis: 60%;
+  width: 60%;
 }
 
 .text {
@@ -113,12 +119,13 @@ header {
 .grid-item {
   display: grid;
   gap: 100px;
-  grid-template-columns: 300px 300px 300px;
-  grid-template-rows: 300px 300px;
+  grid-template-columns: repeat(3 ,1fr);
   margin-top: 50px;
 }
 
 .skills img {
+  width: 300px;
+  height: 300px;
   opacity: 0.7;
 }
 
@@ -132,7 +139,7 @@ header {
   padding: 50px 0;
 }
 
-.table-cell {
+table {
   table-layout: fixed;
   width: 100%;
   margin-top: 50px;
