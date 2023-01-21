@@ -13,7 +13,7 @@ img {
   vertical-align: bottom;
 }
 
-.header, .skills {
+header, .skills {
   background-color: #fff;
 }
 
@@ -37,6 +37,9 @@ img {
 /* header部分 */
 header {
   padding: 15px 0;
+  position: fixed;
+  width: 100%;
+  z-index: 1;
 }
 
 .fa-archway {
@@ -61,6 +64,10 @@ header {
 
 /* keyvisual部分 */
 .keyvisual {
+  padding-top: 78px;
+}
+
+.keyvisual-inner {
   padding: 400px 0;
   background: url(../img/keyvisual/keyvisual.jpg) no-repeat center/cover;
 }
@@ -131,6 +138,7 @@ header {
 
 .skills img:hover {
   opacity: 1.0;
+  transition: 0,7s;
 }
 
 /* plan部分 */
@@ -189,10 +197,9 @@ tr:nth-child(even) {
   overflow: hidden;
 }
 
-.fab:hover, 
-.fa:hover {
-  color: #fff;
-  transition: 0,5s;
+.sns li:hover {
+  background-color: #fff;
+  transition: 0.5s;
 }
 
 /* footer部分 */
