@@ -1,6 +1,6 @@
 @charset "utf-8";
 
-/* 共通部分 */
+/* ----------共通部分---------- */
 body {
   width: 100%;
 }
@@ -22,24 +22,25 @@ header, .skills {
   width: 1100px;
 }
 
-.flex {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-}
-
 .section-title {
   font-size: 40px;
   letter-spacing: 10px;
   text-align: center;
 }
 
-/* header部分 */
+/* ----------header部分---------- */
 header {
   padding: 15px 0;
   position: fixed;
   width: 100%;
   z-index: 1;
+  /* header追従して重なった部分はkeyvisual部分で余白追加 */
+}
+
+.flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
 }
 
 .fa-archway {
@@ -55,6 +56,7 @@ header {
   font-size: 12px;
   background-color: #6ba7eb;
   padding: 12px 14px;
+  display: block;
 }
 
 .btn:hover {
@@ -62,7 +64,7 @@ header {
   transition: 0.3s;
 }
 
-/* keyvisual部分 */
+/* ----------keyvisual部分---------- */
 .keyvisual {
   padding-top: 78px;
 }
@@ -89,11 +91,17 @@ header {
   color: #fff;
 }
 
-/* work部分 */
+/* ----------work部分---------- */
 .work {
   background-color: #e3f2fd;
   text-align: center;
   padding-top: 50px;
+}
+
+.work-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
 }
 
 .img-box {
@@ -118,7 +126,7 @@ header {
   word-break: break-all;
 }
 
-/*　skills部分　*/
+/*　----------skills部分----------　*/
 .skills {
   padding: 50px 0 70px 0;
 }
@@ -130,9 +138,13 @@ header {
   margin-top: 50px;
 }
 
-.skills img {
+.skills li, .skills a, .skills img {
   width: 300px;
   height: 300px;
+  display: block;
+}
+
+.skills img {
   opacity: 0.7;
 }
 
@@ -141,7 +153,7 @@ header {
   transition: 0,7s;
 }
 
-/* plan部分 */
+/* ----------plan部分---------- */
 .plan {
   background-color: #d0dfea;
   padding: 50px 0;
@@ -177,7 +189,7 @@ tr:nth-child(even) {
   background-color: #e0efff;
 }
 
-/* sns部分 */
+/* ----------sns部分---------- */
 .sns {
   background-color: #e3f2fd;
   padding: 200px 0;
@@ -189,12 +201,15 @@ tr:nth-child(even) {
   text-align: center;
 }
 
-.fab, .fa {
-  color: #8c8c8c;
+.sns li {
   width: 185px;
-  font-size: 40px;
   padding: 25px 0;
+}
+
+.sns a {
+  font-size: 40px;
   overflow: hidden;
+  color: #8c8c8c;
 }
 
 .sns li:hover {
@@ -202,7 +217,7 @@ tr:nth-child(even) {
   transition: 0.5s;
 }
 
-/* footer部分 */
+/* ----------footer部分---------- */
 footer {
   padding: 20px 0 25px 0;
   background-color: #cfd8ce;
@@ -212,4 +227,164 @@ p {
   font-size: 10px;
   letter-spacing: 0.5px;
   text-align: right;
+}
+
+
+/* ---------------responsive TAB--------------- */
+
+@media screen and ( max-width:1199px ) {
+
+/* -----共通部分----- */
+  .inner {
+    width: 97%;
+  }
+
+  /* -----keyvisual部分----- */
+  .keyvisual-inner {
+    padding: 250px 0;
+  }
+
+  /* -----work部分----- */
+  .work {
+    padding: 50px 0;
+  }
+
+  .work-flex {
+    display: block;
+  }
+
+  .img-box, .content {
+    width: 100%;
+  }
+
+  /* -----skills部分----- */
+  .grid-item {
+    display: block;
+  }
+
+  .skills li {
+    margin: 0 auto;
+  }
+
+  .skills li:nth-child(3n) {
+    margin-bottom: 80px;
+  }
+
+  .skills li:last-child {
+    margin-bottom: 0;
+  }
+
+}
+
+
+/* ---------------responsive SP--------------- */
+
+@media screen and ( max-width: 767px ) {
+
+/* -----共通部分----- */
+  .inner {
+    width: 97%;
+  }
+
+  /* -----header部分----- */
+  .btn {
+    display: none;
+  }
+
+  .hamburger {
+    display: block;
+    width: 40px;
+    height: 32px;
+    position: relative;
+    background-color: #fff;
+  }
+
+  .hamburger-bar {
+    display: block;
+    width: 100%;
+    height: 5px;
+    position: absolute;
+    background-color: #8c8c8c;
+  }
+
+  .hamburger-bar:nth-child(1) {
+    top: 0;
+  }
+
+  .hamburger-bar:nth-child(2) {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .hamburger-bar:nth-child(3) {
+    top: 100%;
+    transform: translateY(-100%);
+  }
+
+  /* -----keyvisual部分----- */
+  .keyvisual-inner {
+    padding: 200px 0;
+  }
+
+  .main-title {
+    font-size: 40px;
+  }
+
+  .sub-title {
+    font-size: 30px;
+  }
+
+  /* -----work部分----- */
+  .work {
+    padding: 50px 0;
+  }
+
+  .work-flex {
+    display: block;
+  }
+
+  .img-box, .content {
+    width: 100%;
+  }
+
+  /* -----skills部分----- */
+  .grid-item {
+    display: block;
+  }
+
+  .skills li {
+    margin: 0 auto;
+  }
+
+  .skills li:nth-child(3n) {
+    margin-bottom: 80px;
+  }
+
+  .skills li:last-child {
+    margin-bottom: 0;
+  }
+
+  /* -----plan部分----- */
+  th {
+    font-size: 14px;
+    line-height: 22px;
+  }
+
+  td {
+    font-size: 12px;
+  }
+
+  /* -----sns部分----- */
+  .sns {
+    padding: 50px 15px;
+  }
+
+  .icon {
+    display: block;
+  }
+
+  .sns li {
+    padding: 50px 0;
+    width: 100%;
+  }
 }
